@@ -14,6 +14,19 @@ class Vehicle {
 
     }
 
+    validate() {
+
+        if (this.modelName === undefined || this.year === undefined || this.price === undefined) {
+            return false;
+        } else if (1950 > this.year > 2100) {
+
+            return false;
+
+
+        } else return true;
+
+    }
+
 }
 
 
