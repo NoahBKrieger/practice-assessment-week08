@@ -1,23 +1,35 @@
-const Tester = require('./tester')
-const Vehicle = require('./vehicle')
+//const Tester = require('./tester');
+//const Vehicle = require('./vehicle');
 
 
 class Review {
 
-    constructor(vehicle, tester, starRating, reviewText) {
+    constructor(vehicle, tester, starRating, text) {
 
-        this.vehicle = vehicle.modelName;
-        this.tester = tester.name;
+        this.vehicle = vehicle;
+        this.tester = tester;
         this.starRating = starRating;
-        this.reviewText = reviewText;
+        this.text = text;
 
     }
+
+    addReview() {
+        this.vehicle.reviews.push(this);
+        this.tester.reviews.push(this);
+    }
+
+    static filterByStars(num, ...args) {
+
+        let res = [];
+
+        args.forEach(arg => {
+            if (arg.starRating === num) {
+                res.push(arg);
+            }
+        })
+
+        return res;
+    }
 }
-
-let tester1 = new Tester("Bob Jones");
-let vehicle1 = new Vehicle("Toyota Prius", 2005, 23000);
-let review1 = new Review(vehicle1, tester1, 5, "Great car, excellent gas mileage!");
-
-console.log(review1);
 
 module.exports = Review;
