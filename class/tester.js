@@ -1,7 +1,6 @@
 const Bicycle = require('./bicycle');
 const ElectricBicycle = require('./electric-bicycle');
 const Review = require('./review');
-const Vehicle = require('./vehicle');
 
 class Tester {
 

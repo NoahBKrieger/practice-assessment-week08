@@ -1,6 +1,5 @@
-//const Tester = require('./tester');
-//const Vehicle = require('./vehicle');
-
+const Tester = require('./tester');    // !! These cause Syntax ERROR of
+const Vehicle = require('./vehicle');   //!! 'REVIEW IS NOT A CONSTRUCTOR'
 
 class Review {
 
